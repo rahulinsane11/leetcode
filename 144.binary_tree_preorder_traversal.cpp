@@ -11,13 +11,18 @@
  */
 class Solution {
 public:
-    vector<int> vec;
-    vector<int> inorderTraversal(TreeNode* root) { // RECURSIVE
+    vector<int> preorderTraversal(TreeNode* root) { // RECURSIVE
+        vector<int> ans;
+        preorder(root,ans);
+        return ans;
+    }
+    
+    void preorder(TreeNode* root, vector<int>& ans)
+    {
         if(root==NULL)
-            return vec;
-        inorderTraversal(root->left);
-        vec.push_back(root->val);
-        inorderTraversal(root->right);
-        return vec;
+            return;
+        ans.push_back(root->val);
+        preorder(root->left, ans);
+        preorder(root->right, ans);
     }
 };

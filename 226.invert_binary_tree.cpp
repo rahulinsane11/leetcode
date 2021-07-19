@@ -11,13 +11,19 @@
  */
 class Solution {
 public:
-    vector<int> vec;
-    vector<int> inorderTraversal(TreeNode* root) { // RECURSIVE
+    TreeNode* invertTree(TreeNode* root) { // RECURSIVE
+        inv(root);
+        return root;
+    }
+    
+    void inv(TreeNode* root)
+    {
         if(root==NULL)
-            return vec;
-        inorderTraversal(root->left);
-        vec.push_back(root->val);
-        inorderTraversal(root->right);
-        return vec;
+            return;
+        TreeNode* temp=root->right; // swap left and right child
+        root->right=root->left;
+        root->left=temp; 
+        inv(root->left); // go to left subtree
+        inv(root->right); // go to right subtree
     }
 };

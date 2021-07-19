@@ -12,7 +12,7 @@
 class Solution {
 public:
     vector<int> vec;
-    vector<int> inorderTraversal(TreeNode* root) {
+    vector<int> inorderTraversal(TreeNode* root) { // ITERATIVE
         stack<TreeNode*> st;
         TreeNode* curr=root;
         while(1)

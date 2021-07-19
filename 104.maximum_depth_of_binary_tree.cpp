@@ -11,13 +11,12 @@
  */
 class Solution {
 public:
-    vector<int> vec;
-    vector<int> inorderTraversal(TreeNode* root) { // RECURSIVE
+    int maxDepth(TreeNode* root) { // RECURSIVE
         if(root==NULL)
-            return vec;
-        inorderTraversal(root->left);
-        vec.push_back(root->val);
-        inorderTraversal(root->right);
-        return vec;
+            return 0;
+        int l=maxDepth(root->left);
+        int r=maxDepth(root->right);
+        int m=max(l,r)+1;
+        return m;
     }
 };
