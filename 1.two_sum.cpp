@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int>& nums, int target) { // T.C.=O(n^2) , S.C.=O(1)
         vector<int> result;
         int n=nums.size();
         for(int i=0; i<n; i++)

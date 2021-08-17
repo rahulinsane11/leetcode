@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int>& nums, int target) { // T.C.=O(n) , S.C.=O(n)
         vector<int> result;
         unordered_map<int,int> hash_table;
         for(int i=0; i<nums.size(); i++)
